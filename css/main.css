@@ -1,0 +1,602 @@
+/* Acceuil section */
+
+#acceuil {
+  position: relative;
+  padding: 0 4rem;
+  height: 100vh;
+  background-image: url(../images/landing-bg.png);
+  background-size: cover;
+}
+
+@media (max-width: 768px) {
+  #acceuil {
+    background-position: -300px 0;
+  }
+}
+
+@media (max-width: 500px) {
+  #acceuil {
+    background-position: -400px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  #acceuil {
+    background-position: -500px 0;
+  }
+}
+
+#acceuil nav {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 500px) {
+  #acceuil {
+    padding: 0 1.5rem;
+  }
+}
+
+#acceuil nav .logo {
+  max-height: 100px;
+}
+
+@media (max-width: 1100px) {
+  #acceuil nav .logo {
+    max-width: 90px;
+  }
+}
+
+@media (max-width: 992px) {
+  #acceuil nav .logo {
+    max-width: 80px;
+  }
+}
+
+#acceuil nav .fa-bars {
+  display: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: all var(--trans-time);
+}
+
+#acceuil nav .fa-bars:hover {
+  color: var(--main-blue-clr);
+  transform: scale(1.1);
+}
+
+@media (max-width: 916px) {
+  #acceuil nav .fa-bars {
+    display: block;
+  }
+}
+
+#acceuil nav .links {
+  position: relative;
+  display: flex;
+}
+
+@media (max-width: 916px) {
+  #acceuil nav .links {
+    min-width: 350px;
+    padding: 1.5rem;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--main-black-clr);
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    visibility: hidden;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all var(--trans-time);
+  }
+}
+
+#acceuil nav .show-menu {
+  visibility: visible;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#acceuil nav .links .fa-x {
+  display: none;
+  transition: all var(--trans-time);
+}
+
+#acceuil nav .links .fa-x:hover {
+  color: var(--main-blue-clr);
+}
+
+@media (max-width: 916px) {
+  #acceuil nav .links .fa-x {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #fff;
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+}
+
+#acceuil nav .links img {
+  display: none;
+}
+
+@media (max-width: 916px) {
+  #acceuil nav .links img {
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+    display: block;
+    max-width: 100px;
+  }
+}
+
+#acceuil .links li a {
+  display: inline-block;
+  position: relative;
+  padding: 0.6rem 1rem;
+  color: #fff;
+  font-weight: bold;
+  transition: var(--trans-time);
+}
+
+@media (max-width: 1100px) {
+  #acceuil .links li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 992px) {
+  #acceuil .links li a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 916px) {
+  #acceuil .links li a {
+    padding: 1rem;
+    font-size: 18px;
+  }
+}
+
+#acceuil .links li a::before,
+#acceuil .links li .active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  border-radius: 3px;
+  background-color: var(--main-blue-clr);
+  transition: all var(--trans-time);
+}
+
+#acceuil .links li a::before {
+  width: 0;
+}
+#acceuil .links li .active::before {
+  width: calc(100% - 30px);
+}
+
+#acceuil .links li a:hover::before {
+  width: calc(100% - 30px);
+}
+
+@media (max-width: 916px) {
+  #acceuil .links li a::before,
+  #acceuil .links li .active::before {
+    display: none;
+  }
+
+  #acceuil .links li a:hover,
+  #acceuil .links li .active {
+    color: var(--main-blue-clr);
+  }
+
+  #acceuil .links li a:hover {
+    padding-left: 1.5rem;
+  }
+}
+
+#acceuil .content {
+  position: relative;
+  margin-top: 10rem;
+  margin-left: 6rem;
+  color: #fff;
+}
+
+@media (min-width: 1370px) {
+  #acceuil .content {
+    margin-top: 21rem;
+  }
+}
+
+@media (max-width: 992px) {
+  #acceuil .content {
+    margin-left: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #acceuil .content {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #acceuil .content {
+    margin-top: 9rem;
+  }
+}
+
+#acceuil .content::before {
+  content: "";
+  position: absolute;
+  bottom: -11px;
+  left: -2.5rem;
+  width: 1px;
+  background-color: var(--main-blue-clr);
+  opacity: 0.5;
+  animation: expand-up 1.5s ease-in-out forwards;
+}
+
+#acceuil .content h1 {
+  margin-bottom: 0.75rem;
+  font-family: "Aldrich";
+  text-transform: uppercase;
+  font-size: 4rem;
+}
+
+@media (max-width: 650px) {
+  #acceuil .content h1 {
+    font-size: 3rem;
+  }
+}
+
+#acceuil .content h5 {
+  margin-bottom: 0.75em;
+  color: var(--main-blue-clr);
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+@media (max-width: 650px) {
+  #acceuil .content h5 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #acceuil .content h5 {
+    font-size: 1.1rem;
+  }
+}
+
+#acceuil .content p {
+  margin-bottom: 2rem;
+  text-align: justify;
+  color: #fff;
+  max-width: 700px;
+}
+
+@media (max-width: 500px) {
+  #acceuil .content p {
+    font-size: 0.8rem;
+  }
+}
+
+#acceuil .content a {
+  position: relative;
+  padding: 0.6rem 1.5rem;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+#acceuil .content a::before,
+#acceuil .content a::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transition: all 0.5s;
+  opacity: 0.8;
+}
+
+#acceuil .content a::before {
+  top: 0;
+  right: 0;
+  border-top-right-radius: 4px;
+  border-top: 2px solid #4d4d4d;
+  border-right: 2px solid #4d4d4d;
+}
+
+#acceuil .content a::after {
+  bottom: 0;
+  left: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom: 2px solid #4d4d4d;
+  border-left: 2px solid #4d4d4d;
+}
+
+#acceuil .content a:hover::before,
+#acceuil .content a:hover::after {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border-radius: 4px;
+}
+
+/* Aceuil section */
+
+/* À propos de Nous section  */
+
+#a-propos {
+  padding-top: var(--main-y-padding);
+  padding-bottom: var(--main-y-padding);
+}
+
+#a-propos .container {
+  display: flex;
+  gap: 3rem;
+}
+
+@media (max-width: 992px) {
+  #a-propos .container {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#a-propos .container .image {
+  max-width: 1300px;
+}
+
+@media (max-width: 992px) {
+  #a-propos .container .image {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  #a-propos .container .image {
+    max-width: 400px;
+  }
+}
+
+#a-propos .container .image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#a-propos .content .special-heading {
+  margin-bottom: 3rem;
+  text-align: start;
+}
+
+@media (max-width: 992px) {
+  #a-propos .content .special-heading {
+    text-align: center;
+  }
+}
+
+#a-propos .content p {
+  max-width: calc(100% - 70px);
+  font-size: 19px;
+  text-align: justify;
+}
+
+@media (max-width: 992px) {
+  #a-propos .content p {
+    padding: 0 2rem;
+    max-width: 100%;
+    text-align: justify;
+  }
+}
+
+#a-propos .content p span {
+  color: var(--main-black-clr);
+  font-size: 23px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #a-propos .content p {
+    font-size: 1rem;
+  }
+
+  #a-propos .content p span {
+    font-size: 21px;
+  }
+}
+
+/* À propos de Nous section  */
+
+/* Nos Domaines d'activités */
+
+#nos-domaines {
+  padding-top: var(--main-y-padding);
+  padding-bottom: var(--main-y-padding);
+  background-color: var(--sec-section-bg);
+}
+
+#nos-domaines .domaines-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px 13px;
+}
+
+#nos-domaines .domaine {
+  padding: 1rem;
+}
+
+#nos-domaines .domaine .image {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  #nos-domaines .domaine .image {
+    text-align: center;
+  }
+}
+
+#nos-domaines .domaine .image img {
+  max-width: 70px;
+}
+
+#nos-domaines .domaine h3 {
+  margin-bottom: 2rem;
+  font-family: "Aldrich";
+}
+
+@media (max-width: 768px) {
+  #nos-domaines .domaine h3 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  #nos-domaines .domaine p {
+    text-align: center;
+  }
+}
+
+/* Nos Domaines d'activités */
+
+/* Nos Forces section */
+
+#nos-forces {
+  padding-top: var(--main-y-padding);
+  padding-bottom: var(--main-y-padding);
+  background-image: linear-gradient(to top, #004883, #003561);
+}
+
+#nos-forces .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (max-width: 992px) {
+  #nos-forces .container {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 992px) {
+  #nos-forces .container .image {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 768px) {
+  #nos-forces .container .image {
+    max-width: 400px;
+  }
+}
+
+#nos-forces .container .image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#nos-forces .container .image img:first-of-type {
+  position: absolute;
+  width: 120px;
+  bottom: 20%;
+  right: 0;
+  animation: left-right 5s ease-in-out infinite;
+  z-index: -1;
+}
+
+#nos-forces .container .content {
+  max-width: 55%;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  #nos-forces .container .content {
+    max-width: 100%;
+  }
+}
+
+#nos-forces .content h4 {
+  margin-bottom: 2rem;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+@media (max-width: 512px) {
+  #nos-forces .content h4 {
+    font-size: 23px;
+  }
+}
+
+#nos-forces .content h4 span {
+  font-size: 40px;
+  color: var(--main-blue-clr);
+}
+
+@media (max-width: 512px) {
+  #nos-forces .content h4 span {
+    font-size: 35px;
+  }
+}
+
+#nos-forces .content p {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+@media (max-width: 512px) {
+  #nos-forces .content p {
+    font-size: 16px;
+  }
+}
+
+#nos-forces .content ul {
+  margin-left: 2rem;
+  max-width: calc(100% - 30px);
+  line-height: 2.5;
+}
+
+#nos-forces .content ul li {
+  position: relative;
+  font-weight: 200;
+  font-size: 15px;
+  display: flex;
+}
+
+@media (max-width: 512px) {
+  #nos-forces .content ul li {
+    font-size: 14px;
+  }
+}
+
+#nos-forces .content ul li::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 19px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--main-blue-clr);
+  border-radius: 50%;
+}
+
+/* Nos Forces section */

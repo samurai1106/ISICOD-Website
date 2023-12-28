@@ -1,0 +1,251 @@
+/* Globale styling */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  height: 7px;
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-blue-clr);
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--main-clr);
+}
+
+:root {
+  scrollbar-color: var(--main-blue-clr) #b6b6b6;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  --main-blue-clr: #2aa8e2;
+  --main-black-clr: #161616;
+  --trans-time: 0.4s;
+  --main-y-padding: 6rem;
+  --sec-section-bg: #f9f9fb;
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  color: #474747;
+  line-height: 1.8;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  transition: opacity 0.8s, visibility 0.8s;
+}
+
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border: 4px solid var(--main-blue-clr);
+  border-top-color: #111;
+  border-radius: 50%;
+  animation: loading 1s infinite;
+}
+
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.show-black-overlay {
+  display: block;
+}
+
+.special-heading {
+  margin-bottom: 5rem;
+  font-size: 2.3rem;
+  font-weight: 500;
+  font-family: "Aldrich";
+  text-align: center;
+  color: var(--main-black-clr);
+  word-spacing: 5px;
+}
+
+@media (max-width: 768px) {
+  .special-heading {
+    font-size: 2.1rem;
+  }
+}
+
+.special-heading span {
+  position: relative;
+  color: var(--main-blue-clr);
+  overflow: hidden;
+}
+
+.special-heading .line {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-blue-clr);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.special-heading .line.show-line {
+  bottom: -2px;
+  opacity: 1;
+}
+
+.fade-top {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.fade-down {
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.fade-top.appear-top,
+.fade-down.appear-down {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-left {
+  transform: translateX(-80px);
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.fade-right {
+  transform: translateX(80px);
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.fade-left.appear-left,
+.fade-right.appear-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--main-black-clr);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translateX(70px);
+  opacity: 0;
+  transition: all var(--trans-time);
+}
+
+.scroll-up.show-up-btn {
+  transform: translateX(0);
+  opacity: 0.9;
+}
+
+.scroll-up.show-up-btn:hover {
+  opacity: 1;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* Globale styling */
+
+/* Animations */
+
+@keyframes loading {
+  100% {
+    transform: rotate(1turn);
+    border-color: var(--sec-blue-clr);
+    border-top-color: #111;
+  }
+}
+
+@keyframes expand-up {
+  from {
+    height: 0;
+  }
+  to {
+    height: 120%;
+  }
+}
+
+@keyframes left-right {
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Animations */
