@@ -209,20 +209,13 @@
   width: 100%;
   height: calc(100% - 132px);
   display: flex;
-  align-items: end;
+  align-items: center;
 }
 
 #acceuil .content {
   position: relative;
-  margin-bottom: 4rem;
   margin-left: 5rem;
   color: #fff;
-}
-
-@media (min-width: 1370px) {
-  #acceuil .content {
-    margin-bottom: 15rem;
-  }
 }
 
 @media (max-width: 992px) {
