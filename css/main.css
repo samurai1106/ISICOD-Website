@@ -205,16 +205,23 @@
   }
 }
 
+#acceuil .container {
+  width: 100%;
+  height: calc(100% - 132px);
+  display: flex;
+  align-items: end;
+}
+
 #acceuil .content {
   position: relative;
-  margin-top: 10rem;
-  margin-left: 6rem;
+  margin-bottom: 4rem;
+  margin-left: 5rem;
   color: #fff;
 }
 
 @media (min-width: 1370px) {
   #acceuil .content {
-    margin-top: 21rem;
+    margin-bottom: 15rem;
   }
 }
 
@@ -227,12 +234,6 @@
 @media (max-width: 768px) {
   #acceuil .content {
     margin-left: 2rem;
-  }
-}
-
-@media (max-width: 600px) {
-  #acceuil .content {
-    margin-top: 9rem;
   }
 }
 
