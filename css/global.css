@@ -42,6 +42,11 @@ body {
   background-color: #fff;
 }
 
+section:not(:first-of-type) {
+  padding-top: var(--main-y-padding);
+  padding-bottom: var(--main-y-padding);
+}
+
 ul {
   list-style: none;
 }
@@ -243,10 +248,23 @@ p {
 
 @keyframes left-right {
   50% {
-    transform: translateX(20px);
+    transform: scale(0);
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes filter-animation {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(40px) scale(0.7);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

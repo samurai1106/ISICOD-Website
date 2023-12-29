@@ -164,3 +164,34 @@ window.addEventListener("scroll", () => {
 scrollUpBtn.addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
+
+// ------------------------ Filtring "Nos Technologies" elements ------------------------
+const techTitles = document.querySelectorAll("#tech-titles li");
+const techCards = document.querySelectorAll(".tech");
+
+techTitles.forEach((title) => {
+  title.addEventListener("click", () => {
+    // [1] Remove active class from all titles
+    techTitles.forEach((title) => {
+      title.classList.remove("active");
+    });
+
+    // [2] Add active class to click target
+    title.classList.add("active");
+
+    // [3] Stock class on a varialble
+    let className = title.classList.item(0);
+
+    // [4] Filter process
+    filterItems(className);
+  });
+});
+
+function filterItems(className) {
+  techCards.forEach((el) => {
+    el.classList.remove("show-tech");
+    if (el.classList.contains(className)) {
+      el.classList.add("show-tech");
+    }
+  });
+}
