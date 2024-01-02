@@ -224,3 +224,19 @@
 }
 
 /* Nos Forces section */
+
+/* Nos Technologies section */
+
+@media (max-width: 768px) {
+  #technologies .techs-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+/* Nos Technologies section */
+
+/* Ils nous font confiance section */
+
+/* Ils nous font confiance section */

@@ -165,33 +165,119 @@ scrollUpBtn.addEventListener("click", () => {
   window.scrollTo(0, 0);
 });
 
-// ------------------------ Filtring "Nos Technologies" elements ------------------------
+// ------------------------ Nos Technologies functionalities ------------------------
+
 const techTitles = document.querySelectorAll("#tech-titles li");
 const techCards = document.querySelectorAll(".tech");
+const firstTechCard = document.querySelectorAll(".tech")[0];
+const carousel = document.querySelector(".carousel");
+const arrowIcons = document.querySelectorAll(".scroll-arrows > div");
 
+let isDragStart = false;
+let initialPageX, initialScrollLeft, positionDiff;
+let firstTechCardWidth = firstTechCard.clientWidth + 20;
+
+const showHideIcons = () => {
+  if (carousel.scrollLeft == 0) {
+    arrowIcons[0].classList.remove("show-arrow");
+  } else {
+    arrowIcons[0].classList.add("show-arrow");
+  }
+  if (carousel.scrollLeft == carousel.scrollWidth - carousel.clientWidth) {
+    arrowIcons[1].classList.remove("show-arrow");
+  } else {
+    arrowIcons[1].classList.add("show-arrow");
+  }
+};
+
+window.addEventListener("load", () => {
+  showHideIcons();
+});
+
+// ------------------Filtring process
 techTitles.forEach((title) => {
   title.addEventListener("click", () => {
+    carousel.scrollLeft = 0; // turn carousel scroll to default
     // [1] Remove active class from all titles
     techTitles.forEach((title) => {
       title.classList.remove("active");
     });
-
-    // [2] Add active class to click target
+    // [2] Add active class to clicked target
     title.classList.add("active");
-
     // [3] Stock class on a varialble
     let className = title.classList.item(0);
-
-    // [4] Filter process
+    // [4] Filter process and apply flex direction on carousel
     filterItems(className);
+    // [5] Show or hide sliding arrows
+    showHideIcons();
   });
 });
 
 function filterItems(className) {
+  let itemsCounter = 0;
+  // Filtring
   techCards.forEach((el) => {
     el.classList.remove("show-tech");
     if (el.classList.contains(className)) {
       el.classList.add("show-tech");
+      itemsCounter++;
     }
   });
+  // Adding flex direction
+  if (document.documentElement.scrollWidth < 768) return;
+  else {
+    if (itemsCounter <= 6) {
+      carousel.classList.remove("carousel-column");
+      carousel.classList.add("carousel-row");
+    } else {
+      carousel.classList.remove("carousel-row");
+      carousel.classList.add("carousel-column");
+    }
+  }
 }
+
+// ------------------sliding process
+arrowIcons.forEach((icon) => {
+  icon.addEventListener("click", () => {
+    // scroll carousel depending on icon id
+    if (icon.id == "left") {
+      carousel.scrollLeft -= firstTechCardWidth;
+    } else {
+      carousel.scrollLeft += firstTechCardWidth;
+    }
+    setTimeout(() => showHideIcons(), 60);
+    showHideIcons();
+  });
+});
+
+const dragStart = (e) => {
+  // Upadating global variables value on mouse down event
+  isDragStart = true;
+  initialPageX = e.pageX || e.touches[0].pageX;
+  initialScrollLeft = carousel.scrollLeft;
+  carousel.classList.add("dragging");
+};
+
+const dragging = (e) => {
+  // Scrolling images/carousel to left according to mouse pointer
+  if (!isDragStart) return;
+  e.preventDefault();
+  positionDiff = (e.pageX || e.touches[0].pageX) - initialPageX;
+  carousel.scrollLeft = initialScrollLeft - positionDiff;
+  showHideIcons();
+};
+
+const dragStop = () => {
+  isDragStart = false;
+  carousel.classList.remove("dragging");
+};
+
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+
+carousel.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+
+carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);

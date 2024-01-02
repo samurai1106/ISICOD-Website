@@ -4,8 +4,10 @@
   position: relative;
   padding: 0 4rem;
   height: 100vh;
+  width: 100vw;
   background-image: url(../images/acceuil/landing-bg.png);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #acceuil nav {
@@ -331,6 +333,10 @@
   background-color: var(--sec-section-bg);
 }
 
+#technologies .container {
+  position: relative;
+}
+
 #technologies ul {
   margin-bottom: 4rem;
   display: flex;
@@ -367,17 +373,38 @@
   color: var(--main-blue-clr);
 }
 
-#technologies .techs-container {
+#technologies .techs-container .carousel {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0 auto;
+  max-height: 460px;
+  max-width: calc(100% - 37px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 30px 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+#technologies .techs-container .carousel.carousel-row {
+  flex-direction: row;
+}
+
+#technologies .techs-container .carousel.carousel-column {
+  flex-direction: column;
+}
+
+#technologies .techs-container .carousel.dragging {
+  cursor: grab;
+  scroll-behavior: auto;
 }
 
 #technologies .techs-container .tech {
   position: relative;
   min-height: 200px;
+  max-width: 165px;
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
@@ -419,6 +446,7 @@
 
 #technologies .techs-container .tech img {
   max-width: 70px;
+  pointer-events: none;
 }
 
 #technologies .techs-container .tech h4 {
@@ -430,4 +458,68 @@
   letter-spacing: 1px;
 }
 
+#technologies .container .scroll-arrows {
+  position: absolute;
+  bottom: -65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}
+
+#technologies .container .scroll-arrows > div {
+  visibility: hidden;
+  opacity: 0;
+}
+
+#technologies .container .scroll-arrows > div.show-arrow {
+  visibility: visible;
+  opacity: 1;
+}
+
+#technologies .container .scroll-arrows i {
+  padding: 0.7rem;
+  border: 1px solid var(--main-blue-clr);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-blue-clr);
+  font-size: 1.9rem;
+  cursor: pointer;
+  transition: all var(--trans-time);
+}
+
+#technologies .container .scroll-arrows i:hover {
+  color: #fff;
+  background-color: var(--main-blue-clr);
+  border-color: #fff;
+}
+
 /* Nos Technologies section */
+
+/* Ils nous font confiance section */
+
+/* Ils nous font confiance section */
+
+/* Nos Partenaires section */
+
+#partenaires .partenaires-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#partenaires .partenaires-container a img {
+  max-width: 200px;
+  filter: grayscale(1);
+  transition: filter var(--trans-time);
+}
+
+#partenaires .partenaires-container a img:hover {
+  filter: grayscale(0);
+}
+
+/* Nos Partenaires section */

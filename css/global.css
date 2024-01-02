@@ -40,6 +40,8 @@ body {
   position: relative;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 section:not(:first-of-type) {
@@ -118,23 +120,20 @@ p {
 .special-heading span {
   position: relative;
   color: var(--main-blue-clr);
-  overflow: hidden;
 }
 
-.special-heading .line {
+.special-heading span .line {
+  display: inline-block;
   position: absolute;
-  bottom: -35px;
+  bottom: -3px;
   left: 0;
-  width: 100%;
   height: 2px;
   background-color: var(--main-blue-clr);
-  opacity: 0;
-  transition: all 0.8s ease-out;
 }
 
 .special-heading .line.show-line {
-  bottom: -2px;
-  opacity: 1;
+  animation: line 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .fade-top {
@@ -246,9 +245,18 @@ p {
   }
 }
 
+@keyframes line {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes left-right {
   50% {
-    transform: scale(0);
+    transform: translateX(20px);
   }
   100% {
     transform: translateX(0);
