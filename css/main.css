@@ -378,7 +378,7 @@
   padding-bottom: 15px;
   margin: 0 auto;
   max-height: 460px;
-  max-width: calc(100% - 37px);
+  max-width: calc(100% - 35px);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -499,6 +499,19 @@
 /* Nos Technologies section */
 
 /* Ils nous font confiance section */
+
+#références {
+  padding-bottom: 30px;
+}
+
+#références .container .slider {
+  transform: translateX(20px);
+  cursor: grab;
+}
+
+#références .container .slider img {
+  width: 90px;
+}
 
 /* Ils nous font confiance section */
 

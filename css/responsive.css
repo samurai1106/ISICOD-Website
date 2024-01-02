@@ -227,11 +227,23 @@
 
 /* Nos Technologies section */
 
+@media (max-width: 992px) {
+  #technologies .techs-container .carousel {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
-  #technologies .techs-container {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+  #technologies .techs-container .carousel {
+    max-width: calc(100% - 165px);
+  }
+}
+
+@media (max-width: 450px) {
+  #technologies .techs-container .carousel {
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 100%;
   }
 }
 

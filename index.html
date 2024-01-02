@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="css/main.css" />
     <!-- Responive style sheet -->
     <link rel="stylesheet" href="css/responsive.css" />
+    <!-- slick slider style sheets -->
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/slick-theme.css" />
     <!-- Font awesome css sheet -->
     <link rel="stylesheet" href="css/all.min.css" />
     <!-- uicons css sheet -->
@@ -48,11 +51,11 @@
         />
         <ul class="links fade-top" style="transition-delay: 0.5s">
           <div id="x-mark"><i class="fa-solid fa-x"></i></div>
-          <img class="logo" src="images/logo.svg" alt="logo" />
+          <img class="logo" src="images/acceuil/logo.svg" alt="logo" />
           <li><a class="active" href="#accueil">Acceuil</a></li>
           <li><a href="#a-propos">À propos </a></li>
           <li><a href="#technologies">Technologies</a></li>
-          <li><a href="#references">Références</a></li>
+          <li><a href="#références">Références</a></li>
           <li><a href="#partenaires">Partenaires</a></li>
           <li><a href="#contactez-nous">Contactez-nous</a></li>
         </ul>
@@ -897,6 +900,71 @@
 
     <!-- Nos Technologies section -->
 
+    <section id="références">
+      <div class="container">
+        <h1 class="special-heading fade-down">
+          Ils nous font
+          <span
+            >confiance
+            <div class="line"></div
+          ></span>
+        </h1>
+        <div class="slider fade-left">
+          <div>
+            <img src="images/ils nous fait confiance/1.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/2.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/3.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/4.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/5.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/6.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/7.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/8.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/9.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/10.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/11.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/12.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/13.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/14.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/15.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/16.jpg" alt="référence" />
+          </div>
+          <div>
+            <img src="images/ils nous fait confiance/17.jpg" alt="référence" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Nos Partenaires section -->
 
     <section id="partenaires">
@@ -966,7 +1034,74 @@
 
     <!-- Main script sheet -->
     <script src="js/main.js"></script>
+
+    <!-- Jquery for slick slider (CDN) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js"
+      integrity="sha512-KgffulL3mxrOsDicgQWA11O6q6oKeWcV00VxgfJw4TcM8XRQT8Df9EsrYxDf7tpVpfl3qcYD96BpyPvA4d1FDQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Slick slider sript sheet -->
+    <script src="js/slick.min.js"></script>
+
     <!-- Font awesome js sheet -->
     <script src="js/all.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 900,
+          slidesToShow: 7,
+          slidesToScroll: 3,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 6,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true,
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 5,
+                slidesToScroll: 4,
+              },
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4,
+              },
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+              },
+            },
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+          ],
+        });
+      });
+    </script>
   </body>
 </html>
