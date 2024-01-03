@@ -93,6 +93,9 @@
 }
 
 @media (max-width: 650px) {
+  #acceuil {
+    background-attachment: initial;
+  }
   #acceuil .content h1 {
     font-size: 3rem;
   }
@@ -249,6 +252,59 @@
 
 /* Nos Technologies section */
 
-/* Ils nous font confiance section */
+/* Contactez-nous section */
 
-/* Ils nous font confiance section */
+@media (max-width: 1200px) {
+  #contactez-nous .bg-image {
+    background-position: -400px 0;
+  }
+}
+
+@media (max-width: 992px) {
+  #contactez-nous .bg-image {
+    background-position: -600px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #contactez-nous .bg-image {
+    background-position: -900px 0;
+  }
+
+  #contactez-nous .container .content {
+    padding: 0 20px;
+    display: block;
+  }
+}
+
+@media (max-width: 574px) {
+  #contactez-nous .bg-image {
+    background-position: -1000px 0;
+  }
+
+  #contactez-nous .form form textarea {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  #contactez-nous .form form input {
+    width: 100%;
+  }
+}
+
+/* Contactez-nous section */
+
+/* Footer */
+
+@media (max-width: 768px) {
+  footer .container {
+    justify-content: center;
+  }
+
+  footer .container img {
+    max-height: 80px;
+  }
+}
+
+/* Footer */

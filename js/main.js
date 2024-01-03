@@ -253,7 +253,7 @@ arrowIcons.forEach((icon) => {
 const dragStart = (e) => {
   // Upadating global variables value on mouse down event
   isDragStart = true;
-  initialPageX = e.pageX || e.touches[0].pageX;
+  initialPageX = e.pageX;
   initialScrollLeft = carousel.scrollLeft;
   carousel.classList.add("dragging");
 };
@@ -262,7 +262,7 @@ const dragging = (e) => {
   // Scrolling images/carousel to left according to mouse pointer
   if (!isDragStart) return;
   e.preventDefault();
-  positionDiff = (e.pageX || e.touches[0].pageX) - initialPageX;
+  positionDiff = e.pageX - initialPageX;
   carousel.scrollLeft = initialScrollLeft - positionDiff;
   showHideIcons();
 };
@@ -273,11 +273,6 @@ const dragStop = () => {
 };
 
 carousel.addEventListener("mousedown", dragStart);
-carousel.addEventListener("touchstart", dragStart);
-
 carousel.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
-
 carousel.addEventListener("mouseup", dragStop);
 carousel.addEventListener("mouseleave", dragStop);
-carousel.addEventListener("touchend", dragStop);

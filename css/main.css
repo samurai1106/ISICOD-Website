@@ -7,6 +7,7 @@
   width: 100vw;
   background-image: url(../images/acceuil/landing-bg.png);
   background-size: cover;
+  background-position: top center;
   background-attachment: fixed;
 }
 
@@ -536,3 +537,178 @@
 }
 
 /* Nos Partenaires section */
+
+/* Contactez-nous section */
+
+#contactez-nous {
+  position: relative;
+}
+
+#contactez-nous .bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/contactez-nous/footer-bg.jfif);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  z-index: -1;
+}
+
+#contactez-nous .bg-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 53, 97, 0.9);
+}
+
+#contactez-nous .container .content {
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+}
+
+#contactez-nous .content .address .info {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#contactez-nous .address .info .icone {
+  padding: 1.3rem;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--trans-time);
+}
+
+#contactez-nous .address .info .icone:hover {
+  background-color: var(--main-blue-clr);
+}
+
+#contactez-nous .address .info .context {
+  max-width: 350px;
+  color: #fff;
+}
+
+#contactez-nous .form form > div {
+  margin-bottom: 1.3rem;
+}
+
+#contactez-nous .form form > div label {
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 300;
+  display: block;
+}
+
+#contactez-nous .form form input {
+  width: 330px;
+}
+
+#contactez-nous .form form textarea {
+  width: 470px;
+  resize: none;
+}
+
+#contactez-nous .form form input,
+#contactez-nous .form form textarea {
+  padding: 0.75rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  outline: none;
+  border: 1px solid #fff;
+}
+
+#contactez-nous .form button {
+  padding: 0.75rem 1rem;
+  outline: none;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: all var(--trans-time);
+}
+
+#contactez-nous .form button:hover {
+  background-color: #fff;
+  color: #222;
+}
+
+/* Contactez-nous section */
+
+/* Footer */
+
+footer {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-image: linear-gradient(to top, #00335e, #002e53);
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+footer .container img {
+  max-height: 65px;
+}
+
+footer .container .social-media {
+  display: flex;
+}
+
+footer .container .social-media a {
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  border-radius: 7px;
+  color: #d4d4d4;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: 1.2rem;
+  transition: all var(--trans-time);
+}
+
+footer .container .social-media a:hover {
+  color: #fff;
+}
+
+footer .container .social-media .facebook:hover {
+  background-color: #425f9c;
+}
+
+footer .container .social-media .whatsapp:hover {
+  background-color: #2eb238;
+}
+
+footer .container .social-media .behance:hover {
+  background-color: #081324;
+}
+
+footer .container .social-media .linkedin:hover {
+  background-color: #126bc4;
+}
+
+footer .container > div {
+  text-align: center;
+  font-size: 15px;
+  color: #d4d4d4;
+}
+
+/* Footer */

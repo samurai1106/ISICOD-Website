@@ -29,6 +29,8 @@
   scrollbar-color: var(--main-blue-clr) #b6b6b6;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
   --main-blue-clr: #2aa8e2;
   --main-black-clr: #161616;
   --trans-time: 0.4s;
@@ -44,7 +46,7 @@ body {
   overflow-y: scroll;
 }
 
-section:not(:first-of-type) {
+section {
   padding-top: var(--main-y-padding);
   padding-bottom: var(--main-y-padding);
 }
@@ -175,10 +177,10 @@ p {
 .scroll-up {
   position: fixed;
   bottom: 25px;
-  right: 25px;
+  right: 15px;
   width: 40px;
   height: 40px;
-  background-color: var(--main-black-clr);
+  background-color: var(--main-blue-clr);
   color: #fff;
   display: flex;
   justify-content: center;
