@@ -246,7 +246,6 @@ arrowIcons.forEach((icon) => {
       carousel.scrollLeft += firstTechCardWidth;
     }
     setTimeout(() => showHideIcons(), 60);
-    showHideIcons();
   });
 });
 

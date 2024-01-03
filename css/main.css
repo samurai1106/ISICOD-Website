@@ -597,7 +597,7 @@
 }
 
 #contactez-nous .address .info .context {
-  max-width: 350px;
+  max-width: 290px;
   color: #fff;
 }
 
@@ -608,7 +608,6 @@
 #contactez-nous .form form > div label {
   margin-bottom: 0.5rem;
   color: #fff;
-  font-weight: 300;
   display: block;
 }
 
@@ -636,6 +635,9 @@
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
   transition: all var(--trans-time);
 }
@@ -665,6 +667,13 @@ footer .container {
 
 footer .container img {
   max-height: 65px;
+}
+
+footer .container > div {
+  text-align: center;
+  font-size: 15px;
+  color: #d4d4d4;
+  transform: translateX(45px) !important;
 }
 
 footer .container .social-media {
@@ -703,12 +712,6 @@ footer .container .social-media .behance:hover {
 
 footer .container .social-media .linkedin:hover {
   background-color: #126bc4;
-}
-
-footer .container > div {
-  text-align: center;
-  font-size: 15px;
-  color: #d4d4d4;
 }
 
 /* Footer */

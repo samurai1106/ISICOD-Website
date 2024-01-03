@@ -254,21 +254,15 @@
 
 /* Contactez-nous section */
 
-@media (max-width: 1200px) {
-  #contactez-nous .bg-image {
-    background-position: -400px 0;
-  }
-}
-
 @media (max-width: 992px) {
-  #contactez-nous .bg-image {
-    background-position: -600px 0;
+  #contactez-nous .form form textarea {
+    width: 400px;
   }
 }
 
 @media (max-width: 768px) {
   #contactez-nous .bg-image {
-    background-position: -900px 0;
+    background-position: -300px 0;
   }
 
   #contactez-nous .container .content {
@@ -277,9 +271,16 @@
   }
 }
 
+@media (max-width: 650px) {
+  #contactez-nous .bg-image {
+    background-position: -1200px 0;
+    background-attachment: initial;
+  }
+}
+
 @media (max-width: 574px) {
   #contactez-nous .bg-image {
-    background-position: -1000px 0;
+    background-position: -1300px 0;
   }
 
   #contactez-nous .form form textarea {
@@ -297,12 +298,17 @@
 
 /* Footer */
 
+@media (max-width: 992px) {
+  footer .container > div {
+    transform: translateX(0) !important;
+  }
+}
+
 @media (max-width: 768px) {
   footer {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-
   footer .container {
     justify-content: center;
   }

@@ -30,7 +30,6 @@
   scrollbar-width: thin;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  overflow-y: scroll;
   --main-blue-clr: #2aa8e2;
   --main-black-clr: #161616;
   --trans-time: 0.4s;
@@ -43,7 +42,6 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #fff;
   overflow-x: hidden;
-  overflow-y: scroll;
 }
 
 section {
