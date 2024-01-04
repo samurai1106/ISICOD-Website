@@ -5,6 +5,17 @@ window.addEventListener("load", () => {
   loader.classList.add("loader-hidden");
 });
 
+// ------------------ Landing section heading animation (ISICOD) ------------------
+const animatedHeading = document.querySelector(".name h1");
+
+window.addEventListener("load", () => {
+  animatedHeading.classList.add("animate");
+});
+
+setInterval(() => {
+  animatedHeading.classList.toggle("animate");
+}, 2800);
+
 // ------------------ Responsive menu ------------------
 const menuBars = document.querySelector("#menu-bars");
 const menu = document.querySelector(".links");
