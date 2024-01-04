@@ -138,7 +138,7 @@
 
 #acceuil .content .name h1.animate {
   border-right: 4px solid;
-  animation: typing 0.9s steps(9, end) 0.5s 1 normal both, cursor 800ms infinite;
+  animation: typing 0.9s steps(9, end) 0.7s 1 normal both, cursor 800ms infinite;
 }
 
 #acceuil .content h5 {
